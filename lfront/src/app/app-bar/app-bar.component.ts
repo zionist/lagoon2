@@ -9,7 +9,7 @@ import { AuthService } from '../service/auth/auth.service';
 export class AppBarComponent implements OnInit {
 
   constructor(public auth: AuthService) {
-    auth.handleAuthentication();
+   
   }
 
   ngOnInit() {

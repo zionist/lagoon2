@@ -8,13 +8,36 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppBarComponent } from './app-bar/app-bar.component';
 import { AuthService } from './service/auth/auth.service';
+import { WhoamiComponent } from './component/whoami/whoami.component';
+import { HttpClientModule } from '@angular/common/http';
+import { WhoAmIService } from './service/whoami/whoami.service';
+import { AuthCallbackComponent } from './component/auth-callback/auth-callback.component';
+import { Routes, RouterModule } from '@angular/router';
+
+
+const appRoutes: Routes = [
+  { path: 'auth/successLogin', component: AuthCallbackComponent },
+  
+  
+  //{ path: '**', component: PageNotFoundComponent }
+];
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppBarComponent
+    AppBarComponent,
+    WhoamiComponent,
+    AuthCallbackComponent
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      //{ enableTracing: true } // <-- debugging purposes only
+    ),
+
+
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -23,9 +46,10 @@ import { AuthService } from './service/auth/auth.service';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, WhoAmIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

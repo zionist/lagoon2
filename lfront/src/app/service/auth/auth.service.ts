@@ -15,7 +15,7 @@ export class AuthService {
         domain: 'bitzlato-dev.auth0.com',
         responseType: 'token id_token',
         redirectUri: 'http://localhost:4200/auth/successLogin',
-        scope: 'openid profile email'
+        scope: 'openid'
     });
 
     constructor(public router: Router) {
@@ -33,17 +33,19 @@ export class AuthService {
     }
 
     public login(): void {
+        console.log("Do login")
         this.auth0.authorize();
     }
 
     public handleAuthentication(): void {
+        console.log("Handle auth")
         this.auth0.parseHash((err, authResult) => {
             if (authResult && authResult.accessToken && authResult.idToken) {
                 window.location.hash = '';
                 this.localLogin(authResult);
-                this.router.navigate(['/home']);
+                this.router.navigate(['/']);
             } else if (err) {
-                this.router.navigate(['/home']);
+                this.router.navigate(['/']);
                 console.log(err);
             }
         });
@@ -77,6 +79,8 @@ export class AuthService {
         this._expiresAt = 0;
         // Remove isLoggedIn flag from localStorage
         localStorage.removeItem('isLoggedIn');
+
+        
         // Go back to the home route
         this.router.navigate(['/']);
     }
