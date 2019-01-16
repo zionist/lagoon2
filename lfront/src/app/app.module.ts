@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule} from '@angular/material';
 
 import { NgModule } from '@angular/core';
 
@@ -19,7 +19,8 @@ import { AppBarComponent } from './app-bar/app-bar.component';
     AppRoutingModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
