@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppBarComponent } from './app-bar/app-bar.component';
+import { AuthService } from './service/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { AppBarComponent } from './app-bar/app-bar.component';
     MatButtonModule,
     MatButtonToggleModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

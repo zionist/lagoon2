@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../service/auth/auth.service';
 
 @Component({
   selector: 'app-bar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppBarComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(public auth: AuthService) {
+    auth.handleAuthentication();
   }
 
+  ngOnInit() {
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      this.auth.renewTokens();
+    }
+  }
 }
