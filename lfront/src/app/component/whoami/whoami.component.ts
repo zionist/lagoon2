@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { WhoAmIService } from 'src/app/service/whoami/whoami.service';
+import { WhoAmIService, WhoAmIResponse } from 'src/app/service/whoami/whoami.service';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-whoami',
@@ -8,6 +9,8 @@ import { WhoAmIService } from 'src/app/service/whoami/whoami.service';
 })
 export class WhoamiComponent implements OnInit {
 
+  public whoAmI : WhoAmIResponse 
+
   constructor(public whoAmIService: WhoAmIService) {
     
   }
@@ -15,7 +18,7 @@ export class WhoamiComponent implements OnInit {
 
   private loadWhoAmI() {
     this.whoAmIService.whoAmI().subscribe(
-      data => console.log(data)
+      (data: WhoAmIResponse) => this.whoAmI = data
     )
   }
 

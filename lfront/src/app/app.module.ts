@@ -16,7 +16,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const appRoutes: Routes = [
-  { path: 'auth/successLogin', component: AuthCallbackComponent },
+  { path: 'auth/successLogin', component: AuthCallbackComponent },  
+  { path: 'whoami', component: WhoamiComponent}
+  //{ path: '',   redirectTo: '/app', pathMatch: 'full' }
   
   
   //{ path: '**', component: PageNotFoundComponent }

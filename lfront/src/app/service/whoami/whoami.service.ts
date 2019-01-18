@@ -3,22 +3,24 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 
-interface WhoAmIResponse {
-    message: string;
+export interface WhoAmIResponse {
+    userId: number,
+    name: string
 }
+
+
+
 
 @Injectable()
 export class WhoAmIService {
 
     constructor(public auth: AuthService, private http: HttpClient) { }
 
-    public whoAmI(): Observable<Object> {
-        console.log("whoami")
-        console.log(this.auth.accessToken)
-        return this.http.get("http://localhost:8080/api/p2p/whoami",
+    public whoAmI(): Observable<Object> {        
+        return this.http.get<WhoAmIResponse>("http://localhost:8080/api/p2p/whoami",
 
             {
-                headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)
+                headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.idToken}`)
             })
     }
 }

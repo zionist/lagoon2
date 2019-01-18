@@ -1,5 +1,5 @@
 <mat-toolbar class="z-depth-2" color="primary">
-    <img class="logo_img" src="assets/img/logo.png">    
+    <a href="/">  <img class="logo_img" src="assets/img/logo.png"> </a>   
     <span class="example-spacer"></span>
     <button mat-raised-button color="accent" *ngIf="!auth.isAuthenticated()" (click)="auth.login()" >Войти</button>
     <button mat-raised-button color="accent" *ngIf="auth.isAuthenticated()" (click)="auth.logout()" >Выйти</button>

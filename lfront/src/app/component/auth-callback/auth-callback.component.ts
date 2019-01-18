@@ -8,17 +8,20 @@ import { AuthService } from 'src/app/service/auth/auth.service';
 })
 export class AuthCallbackComponent implements OnInit {
 
-  constructor(public auth: AuthService) {
-    console.log("contructor")
+  constructor(public auth: AuthService) {   
     
   }
 
   ngOnInit() {
     console.log("hello")
     this.auth.handleAuthentication();
-    if (localStorage.getItem('isLoggedIn') === 'true') {
-      this.auth.renewTokens();
-    }
+    console.log(this.auth.accessToken)
+    console.log(this.auth.idToken)
+    //if (localStorage.getItem('isLoggedIn') === 'true') {
+    //  this.auth.renewTokens();
+    //  console.log(this.auth.accessToken)
+    //   console.log(this.auth.idToken)
+    //}
   }
 
 
