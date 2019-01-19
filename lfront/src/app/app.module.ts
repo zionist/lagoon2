@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatButtonToggleModule, MatGridListModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatButtonToggleModule, MatGridListModule, MatTableModule} from '@angular/material';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 
@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { WhoAmIService } from './service/whoami/whoami.service';
 import { AuthCallbackComponent } from './component/auth-callback/auth-callback.component';
 import { Routes, RouterModule } from '@angular/router';
+import { WalletStatComponent } from './component/wallet-stat/wallet-stat.component';
+import { WalletStatService } from './service/wallet-stat/wallet-stat.service';
 
 
 const appRoutes: Routes = [
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     AppComponent,
     AppBarComponent,
     WhoamiComponent,
-    AuthCallbackComponent
+    AuthCallbackComponent,
+    WalletStatComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -51,9 +54,10 @@ const appRoutes: Routes = [
     MatButtonToggleModule,
     MatGridListModule,
     HttpClientModule,
+    MatTableModule,
     NgbModule
   ],
-  providers: [AuthService, WhoAmIService],
+  providers: [AuthService, WhoAmIService, WalletStatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
