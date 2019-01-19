@@ -21,8 +21,7 @@ export class WalletStatComponent implements OnInit {
     'paymentsQueue',
     'paymentsError',
     'inputHour',
-    'unconfirmed',
-    'star'
+    'unconfirmed'
 
   
   
