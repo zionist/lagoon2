@@ -1,6 +1,23 @@
 <mat-toolbar class="z-depth-2" color="primary">
-    <a href="/">  <img class="logo_img" src="assets/img/logo.png"> </a>   
-    <span class="example-spacer"></span>
-    <button mat-raised-button color="accent" *ngIf="!auth.isAuthenticated()" (click)="auth.login()" >Войти</button>
-    <button mat-raised-button color="accent" *ngIf="auth.isAuthenticated()" (click)="auth.logout()" >Выйти</button>
-  </mat-toolbar>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+
+
+        <a href="/"> <img class="logo_img" src="assets/img/logo.png"> </a>
+        <!-- <span class="example-spacer"></span> -->
+        <button class="float-right" mat-raised-button color="accent" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">Войти</button>
+        <button class="float-right" mat-raised-button color="accent" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">Выйти</button>
+
+     
+
+      </div>
+      
+        
+
+    </div>
+  </div>
+
+
+</mat-toolbar>

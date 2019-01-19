@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatButtonToggleModule} from '@angular/material';
-
+import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatButtonToggleModule, MatGridListModule} from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -49,7 +49,9 @@ const appRoutes: Routes = [
     MatIconModule,
     MatButtonModule,
     MatButtonToggleModule,
-    HttpClientModule
+    MatGridListModule,
+    HttpClientModule,
+    NgbModule
   ],
   providers: [AuthService, WhoAmIService],
   bootstrap: [AppComponent]

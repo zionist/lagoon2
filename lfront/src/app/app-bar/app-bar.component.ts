@@ -13,8 +13,6 @@ export class AppBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (localStorage.getItem('isLoggedIn') === 'true') {
-      this.auth.renewTokens();
-    }
+    
   }
 }
