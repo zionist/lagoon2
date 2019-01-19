@@ -6,9 +6,7 @@ import * as auth0 from 'auth0-js';
 @Injectable()
 export class AuthService {
 
-    private _idToken: string;
-    private _accessToken: string;
-    private _expiresAt: number;
+  
 
     auth0 = new auth0.WebAuth({
         clientID: 'OL926gD0Zha6h80uJx4TVhJLMKrJemjb',
@@ -19,18 +17,37 @@ export class AuthService {
     });
 
     constructor(public router: Router) {
-        this._idToken = '';
-        this._accessToken = '';
-        this._expiresAt = 0;
+        
     }
 
-    get accessToken(): string {
-        return this._accessToken;
+    
+
+    public set idToken(idToken: string) {
+        localStorage.setItem('idToken', idToken);
     }
 
-    get idToken(): string {
-        return this._idToken;
+    public set expiresAt(expiresAt: number) {
+        localStorage.setItem('expiresAt', String(expiresAt));
+    }        
+    
+    public set accessToken(accessToken: string) {
+        localStorage.setItem('accessToken', accessToken);
     }
+
+
+    public get accessToken(): string {
+        return localStorage.getItem('accessToken');
+    }
+
+    public get idToken(): string {
+        return localStorage.getItem('idToken');
+    }
+
+    public get expiresAt(): number {
+        return Number(localStorage.getItem('expiresAt'));
+    }
+
+
 
     public login(): void {
         console.log("Do login")
@@ -58,9 +75,9 @@ export class AuthService {
         localStorage.setItem('isLoggedIn', 'true');
         // Set the time that the access token will expire at
         const expiresAt = (authResult.expiresIn * 1000) + new Date().getTime();
-        this._accessToken = authResult.accessToken;
-        this._idToken = authResult.idToken;
-        this._expiresAt = expiresAt;
+        this.accessToken = authResult.accessToken;
+        this.idToken = authResult.idToken;
+        this.expiresAt = expiresAt;
     }
 
     public renewTokens(): void {
@@ -76,9 +93,9 @@ export class AuthService {
 
     public logout(): void {
         // Remove tokens and expiry time
-        this._accessToken = '';
-        this._idToken = '';
-        this._expiresAt = 0;
+        this.accessToken = '';
+        this.idToken = '';
+        this.expiresAt = 0;
         // Remove isLoggedIn flag from localStorage
         localStorage.removeItem('isLoggedIn');
 
@@ -90,7 +107,7 @@ export class AuthService {
     public isAuthenticated(): boolean {
         // Check whether the current time is past the
         // access token's expiry time
-        return new Date().getTime() < this._expiresAt;
+        return new Date().getTime() < this.expiresAt;
     }
 
 
