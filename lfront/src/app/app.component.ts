@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './service/auth/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,15 @@ import { AuthService } from './service/auth/auth.service';
 })
 export class AppComponent {
   title = 'lfront';
+  param = {value: 'world'};
 
-  constructor() {
-   
-  }
+    constructor(translate: TranslateService) {
+        // this language will be used as a fallback when a translation isn't found in the current language
+        translate.setDefaultLang('en');
 
-  ngOnInit() {
-   
-  }
+         // the lang to use, if the lang isn't available, it will use the current loader to get them
+        translate.use('en');
+    }
 
 
 }

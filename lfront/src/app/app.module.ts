@@ -4,12 +4,16 @@ import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, Mat
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 
+// internationalisation
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppBarComponent } from './app-bar/app-bar.component';
 import { AuthService } from './service/auth/auth.service';
 import { WhoamiComponent } from './component/whoami/whoami.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { WhoAmIService } from './service/whoami/whoami.service';
 import { AuthCallbackComponent } from './component/auth-callback/auth-callback.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -26,7 +30,10 @@ const appRoutes: Routes = [
   //{ path: '**', component: PageNotFoundComponent }
 ];
 
-
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -44,6 +51,15 @@ const appRoutes: Routes = [
 
 
     BrowserModule,
+    //i18i
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  }),
+    //
     BrowserAnimationsModule,
     AppRoutingModule,
     MatButtonModule,
