@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatButtonToggleModule, MatGridListModule, MatTableModule, MatCardModule, MatSelectModule, MatMenuModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatButtonToggleModule, MatGridListModule, MatTableModule, MatCardModule, MatSelectModule, MatMenuModule, MatTooltipModule} from '@angular/material';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 
@@ -76,6 +76,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatSelectModule,
     FormsModule,   
     MatMenuModule,
+    MatTooltipModule,
     NgbModule
   ],
   providers: [AuthService, WhoAmIService, WalletStatService],

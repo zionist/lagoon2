@@ -26,6 +26,8 @@ export class WalletStatComponent implements OnInit {
   
   
   ];
+
+  
   public walletStat: WalletStatDto[]
 
   constructor(private walletStatService: WalletStatService) { }

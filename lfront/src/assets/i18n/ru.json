@@ -1,6 +1,9 @@
 {
     
-       
+        "LABELS": {
+                "YES": "Да",
+                "NO": "Нет"
+        },   
         "BUTTONS": {
                 "LOGIN": "Войти",
                 "LOGOUT": "Выйти"
@@ -17,7 +20,19 @@
                         "paymentsError": "ошибки выводов",
                         "inputHour": "вводы",
                         "unconfirmed" : "незачисленно",
-                        "minWithdrawal": "мин. вывод"
+                        "minWithdrawal": "мин. вывод",
+                        "TOOLTIP": {
+                                "code": "Код криптовалюты",
+                                "withdrawEnabled": "Вывод включен",
+                                "depositEnabled": "Ввод включен",
+                                "fee": "Комиссия за вывод в %",
+                                "paymentsHour": "Кол-во выводов за последний час",
+                                "paymentsQueue": "Кол-во выводов в очереди",
+                                "paymentsError": "Кол-во неуспешных выводов за 24 часа",
+                                "inputHour": "Кол-во вводов за последний час",
+                                "unconfirmed" : "Кол-во незачисленных вводов за 24 часа",
+                                "minWithdrawal": "Минимальный вывод"
+                        }
  
                 }
          }

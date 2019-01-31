@@ -1,5 +1,8 @@
 {
-    
+        "LABELS": {
+                "YES": "Yes",
+                "NO": "No"
+        },
         "BUTTONS": {
                 "LOGIN": "Login",
                 "LOGOUT": "Logout"
@@ -16,7 +19,19 @@
                         "paymentsError": "payout errors",
                         "inputHour": "inputs",
                         "unconfirmed" : "unconfirmed inputs",
-                        "minWithdrawal": "min payout"
+                        "minWithdrawal": "min payout",
+                        "TOOLTIP": {
+                                "code": "Cryptocurrency code",
+                                "withdrawEnabled": "Withdraw enabled",
+                                "depositEnabled": "Deposit enabled",
+                                "fee": "Output fee in %",
+                                "paymentsHour": "Inputs for last hour",
+                                "paymentsQueue": "input queue",
+                                "paymentsError": "Payout errors for 24 hours",
+                                "inputHour": "Inputs for last hour",
+                                "unconfirmed" : "Unconfirmed inputs for 24 hours",
+                                "minWithdrawal": "Min payout amount"
+                        }
                }
         }
     
