@@ -1,0 +1,1 @@
+export let LANGS = ["ru", "en"]

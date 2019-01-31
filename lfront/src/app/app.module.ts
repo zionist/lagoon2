@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatButtonToggleModule, MatGridListModule, MatTableModule, MatCardModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatButtonToggleModule, MatGridListModule, MatTableModule, MatCardModule, MatSelectModule, MatMenuModule} from '@angular/material';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 
@@ -19,6 +19,7 @@ import { AuthCallbackComponent } from './component/auth-callback/auth-callback.c
 import { Routes, RouterModule } from '@angular/router';
 import { WalletStatComponent } from './component/wallet-stat/wallet-stat.component';
 import { WalletStatService } from './service/wallet-stat/wallet-stat.service';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -72,6 +73,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     MatTableModule,
     MatCardModule,
+    MatSelectModule,
+    FormsModule,   
+    MatMenuModule,
     NgbModule
   ],
   providers: [AuthService, WhoAmIService, WalletStatService],

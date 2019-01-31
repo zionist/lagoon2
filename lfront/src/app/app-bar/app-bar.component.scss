@@ -14,3 +14,20 @@
     height: 32px;
     margin-top: 8px;
 }
+
+.custom-margin {
+  float: right;
+  margin-right: 10px;
+  color: #fff;
+  
+}
+
+.custom-no-margin {
+  margin: 0;
+  padding: 0;
+}
+
+.mat-form-field-wrapper {
+  margin: 0;
+  padding: 0;
+}

@@ -7,14 +7,29 @@
 
         <a href="/"> <img class="logo_img" src="assets/img/logo.png"> </a>
         <!-- <span class="example-spacer"></span> -->
+
+
         <button class="float-right" mat-raised-button color="accent" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">Войти</button>
         <button class="float-right" mat-raised-button color="accent" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">Выйти</button>
 
-     
+
+        <span class="float-right" class="custom-margin">      
+
+          <button mat-button [matMenuTriggerFor]="menu"> {{langSelected}} </button>
+          <mat-menu #menu="matMenu">
+
+              <button (click) = 'setLang(lang)' mat-menu-item *ngFor="let lang of langs" [value]="lang">
+                  {{lang}}
+              </button>
+           
+          </mat-menu>
+
+
+        </span>
 
       </div>
-      
-        
+
+
 
     </div>
   </div>

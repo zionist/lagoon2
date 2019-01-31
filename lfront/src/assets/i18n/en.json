@@ -1,6 +1,6 @@
 {
-    "HOME": {
+    
         "HELLO": "hello {{value}}"
-    }
+    
 }
 
