@@ -1,6 +1,24 @@
 {
     
-        "HELLO": "hello {{value}}"
+        "BUTTONS": {
+                "LOGIN": "Login",
+                "LOGOUT": "Logout"
+        },        
+        "MAIN_PAGE": {
+                "HEADER": "Bitzlato wallets statistics",
+               "STAT_TABLE": {                
+                       "code": "code",
+                        "withdrawEnabled": "withdraw enabled",
+                        "depositEnabled": "deposit enabled",
+                        "fee": "fee",
+                        "paymentsHour": "inputs number",
+                        "paymentsQueue": "input queue",
+                        "paymentsError": "payout errors",
+                        "inputHour": "inputs",
+                        "unconfirmed" : "unconfirmed inputs",
+                        "minWithdrawal": "min payout"
+               }
+        }
     
 }
 

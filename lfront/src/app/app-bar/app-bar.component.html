@@ -9,8 +9,8 @@
         <!-- <span class="example-spacer"></span> -->
 
 
-        <button class="float-right" mat-raised-button color="accent" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">Войти</button>
-        <button class="float-right" mat-raised-button color="accent" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">Выйти</button>
+        <button class="float-right" mat-raised-button color="accent" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">{{ 'BUTTONS.LOGIN' | translate }}</button>
+        <button class="float-right" mat-raised-button color="accent" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">{{ 'BUTTONS.LOGOUT' | translate }}</button>
 
 
         <span class="float-right" class="custom-margin">      

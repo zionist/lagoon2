@@ -1,6 +1,26 @@
 {
     
-        "HELLO": "Привет {{value}}"
+       
+        "BUTTONS": {
+                "LOGIN": "Войти",
+                "LOGOUT": "Выйти"
+        },       
+        "MAIN_PAGE": {
+                "HEADER": "Bitzlato статистика кошельков",
+                "STAT_TABLE": {
+                        "code": "код",
+                        "withdrawEnabled": "вывод включен",
+                        "depositEnabled": "ввод включен",
+                        "fee": "комиссия",
+                        "paymentsHour": "кол-во выводов",
+                        "paymentsQueue": "очередь выводов",
+                        "paymentsError": "ошибки выводов",
+                        "inputHour": "вводы",
+                        "unconfirmed" : "незачисленно",
+                        "minWithdrawal": "мин. вывод"
+ 
+                }
+         }
     
 }
 
